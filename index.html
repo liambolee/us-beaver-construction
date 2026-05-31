@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US Beaver Construction Inc | New Construction · ADU · Remodeling · Flip Projects</title>
+<meta name="description" content="US Beaver Construction Inc — Licensed California General Contractor (CSLB #1136673). Specializing in new construction, additions, ADU, remodeling, and fix & flip projects in LA & SoCal.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --dark: #1A1A18;
+    --steel: #2E2E2A;
+    --steel2: #252520;
+    --light: #F5F0E8;
+    --mid: #7A7060;
+    --green: #5CB85C;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(26,26,24,0.97);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    backdrop-filter: blur(10px);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem; letter-spacing: 3px; color: var(--gold);
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--light);
+    font-size: 0.82rem; letter-spacing: 2px; text-transform: uppercase;
+    font-weight: 500; transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--dark);
+    padding: 0.6rem 1.5rem;
+    font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;
+    font-weight: 700; text-decoration: none;
+    transition: opacity 0.3s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    background:
+      linear-gradient(to bottom right, rgba(26,26,24,0.85) 0%, rgba(26,26,24,0.5) 50%, rgba(26,26,24,0.92) 100%),
+      url('images/project3.jpg') center/cover no-repeat;
+  }
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid var(--gold); color: var(--gold);
+    font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase;
+    padding: 0.4rem 1.2rem; margin-bottom: 2rem;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 9vw, 8.5rem);
+    line-height: 0.92; letter-spacing: 2px;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    margin-top: 1.8rem;
+    font-size: 1.05rem; color: var(--mid); letter-spacing: 0.5px;
+    max-width: 520px; line-height: 1.8;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .hero-tags {
+    margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 0.6rem;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+  .hero-tag {
+    background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold); font-size: 0.72rem; letter-spacing: 1.5px;
+    padding: 0.3rem 0.9rem; text-transform: uppercase;
+  }
+  .hero-cta {
+    margin-top: 2.5rem; display: flex; gap: 1.2rem; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.5s ease both;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--dark);
+    padding: 0.95rem 2.5rem;
+    font-weight: 700; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: opacity 0.3s, transform 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent; color: var(--light);
+    padding: 0.95rem 2.5rem;
+    font-weight: 500; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;
+    text-decoration: none; border: 1px solid rgba(245,240,232,0.35); cursor: pointer;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    position: absolute; right: 4rem; bottom: 4rem;
+    display: flex; gap: 3rem;
+    animation: fadeUp 0.8s 0.65s ease both;
+  }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem; color: var(--gold); line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.68rem; letter-spacing: 2px; color: var(--mid);
+    text-transform: uppercase; margin-top: 0.3rem;
+  }
+
+  /* SERVICES */
+  .services { padding: 7rem 4rem; background: var(--steel); }
+  .section-label {
+    font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1; margin-bottom: 3.5rem;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1px; background: rgba(201,168,76,0.12);
+  }
+  .service-card {
+    background: var(--steel); padding: 2.8rem 2.2rem;
+    transition: background 0.3s; position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute;
+    left: 0; top: 0; width: 3px; height: 0;
+    background: var(--gold); transition: height 0.4s ease;
+  }
+  .service-card:hover::before { height: 100%; }
+  .service-card:hover { background: #35352F; }
+  .service-icon { font-size: 2.2rem; margin-bottom: 1.3rem; }
+  .service-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem; letter-spacing: 1px; margin-bottom: 0.8rem;
+  }
+  .service-card p { font-size: 0.9rem; color: var(--mid); line-height: 1.75; }
+  .service-list {
+    margin-top: 1rem; list-style: none;
+    display: flex; flex-direction: column; gap: 0.4rem;
+  }
+  .service-list li {
+    font-size: 0.82rem; color: var(--mid);
+    padding-left: 1rem; position: relative;
+  }
+  .service-list li::before {
+    content: '—'; position: absolute; left: 0; color: var(--gold);
+  }
+
+  /* GALLERY STRIP */
+  .gallery-strip {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: 280px;
+    overflow: hidden;
+  }
+  .gallery-item {
+    position: relative; overflow: hidden;
+  }
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease, filter 0.4s ease;
+    filter: brightness(0.65) saturate(0.8);
+  }
+  .gallery-item:hover img {
+    transform: scale(1.08);
+    filter: brightness(0.5) saturate(0.6);
+  }
+  .gallery-label {
+    position: absolute; bottom: 1rem; left: 0; right: 0;
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem; letter-spacing: 2px; color: var(--light);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .gallery-item:hover .gallery-label { opacity: 1; }
+  .gallery-item::after {
+    content: ''; position: absolute; inset: 0;
+    border-right: 1px solid rgba(201,168,76,0.15);
+  }
+  .gallery-item:last-child::after { border-right: none; }
+
+  @media (max-width: 768px) {
+    .gallery-strip { grid-template-columns: repeat(2, 1fr); height: 360px; }
+    .gallery-item:last-child { display: none; }
+    .gallery-label { opacity: 1; }
+  }
+
+  /* WHY US */
+  .why-us {
+    padding: 7rem 4rem; background: var(--dark);
+  }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem; margin-top: 3.5rem;
+  }
+  .why-card { text-align: center; }
+  .why-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem; color: var(--gold); line-height: 1;
+  }
+  .why-card h4 {
+    font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;
+    margin: 0.5rem 0; color: var(--light);
+  }
+  .why-card p { font-size: 0.85rem; color: var(--mid); line-height: 1.6; }
+
+  /* FLIP SECTION */
+  .flip-section {
+    padding: 7rem 4rem; background: var(--steel2);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  .flip-image {
+    width: 100%; aspect-ratio: 4/3; object-fit: cover;
+    filter: brightness(0.85);
+  }
+  .flip-img-placeholder {
+    width: 100%; aspect-ratio: 4/3;
+    background:
+      linear-gradient(135deg, rgba(201,168,76,0.08), rgba(26,26,24,0.9)),
+      url('images/interior.jpg') center/cover;
+    position: relative; overflow: hidden;
+  }
+  .flip-img-placeholder::after {
+    content: 'FIX & FLIP EXPERTS';
+    position: absolute; bottom: 1.5rem; left: 1.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem; color: var(--gold); letter-spacing: 3px;
+  }
+  .flip-steps { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+  .flip-step { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem; color: var(--gold); line-height: 1;
+    flex: 0 0 2rem;
+  }
+  .step-content h4 {
+    font-size: 0.9rem; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; margin-bottom: 0.3rem;
+  }
+  .step-content p { font-size: 0.85rem; color: var(--mid); line-height: 1.6; }
+
+  /* PROCESS */
+  .process { padding: 7rem 4rem; background: var(--steel); }
+  .process-steps {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0; margin-top: 3.5rem; position: relative;
+  }
+  .process-step {
+    padding: 2rem 1.5rem; position: relative; text-align: center;
+    border-right: 1px solid rgba(201,168,76,0.15);
+  }
+  .process-step:last-child { border-right: none; }
+  .process-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem; color: rgba(201,168,76,0.15); line-height: 1;
+    position: absolute; top: 1rem; left: 50%; transform: translateX(-50%);
+  }
+  .process-icon { font-size: 1.8rem; margin-bottom: 1rem; position: relative; z-index: 1; }
+  .process-step h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem; letter-spacing: 1px; margin-bottom: 0.5rem;
+    position: relative; z-index: 1;
+  }
+  .process-step p { font-size: 0.82rem; color: var(--mid); line-height: 1.6; position: relative; z-index: 1; }
+
+  /* LICENSE */
+  .license-section {
+    padding: 6rem 4rem; background: var(--dark);
+    display: flex; align-items: center; gap: 5rem; flex-wrap: wrap;
+  }
+  .license-text { flex: 1; min-width: 280px; }
+  .trust-badges { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+  .trust-badge {
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--mid);
+  }
+  .license-badge {
+    flex: 0 0 auto; border: 2px solid var(--gold);
+    padding: 2.5rem 3rem; text-align: center; position: relative;
+  }
+  .license-badge::before {
+    content: 'CSLB LICENSED';
+    position: absolute; top: -0.6rem; left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark); padding: 0 0.8rem;
+    font-size: 0.62rem; letter-spacing: 3px; color: var(--gold);
+  }
+  .license-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem; color: var(--gold); letter-spacing: 3px;
+  }
+  .license-detail {
+    font-size: 0.72rem; letter-spacing: 2px; color: var(--mid);
+    text-transform: uppercase; margin-top: 0.4rem;
+  }
+  .license-expire { margin-top: 1rem; font-size: 0.8rem; color: var(--mid); }
+  .license-expire span { color: var(--green); font-weight: 600; }
+
+  /* SERVICE AREA */
+  .area-section {
+    padding: 6rem 4rem; background: var(--steel2);
+  }
+  .area-grid {
+    display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2.5rem;
+  }
+  .area-tag {
+    background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2);
+    color: var(--light); font-size: 0.82rem; letter-spacing: 1px;
+    padding: 0.5rem 1.1rem;
+    transition: background 0.3s, color 0.3s;
+  }
+  .area-tag:hover { background: var(--gold); color: var(--dark); cursor: default; }
+  .area-tag.featured { border-color: var(--gold); color: var(--gold); }
+
+  /* CONTACT */
+  .contact {
+    padding: 7rem 4rem; background: var(--steel);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+  }
+  .contact-info-items { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+  .contact-info-item { display: flex; align-items: flex-start; gap: 1rem; }
+  .contact-info-item .icon { color: var(--gold); font-size: 1.1rem; flex: 0 0 1.5rem; }
+  .contact-info-item .text { font-size: 0.9rem; color: var(--mid); line-height: 1.6; }
+  .contact-info-item .text strong { color: var(--light); display: block; font-size: 0.78rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.2rem; }
+  .contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label {
+    font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--mid);
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    background: rgba(0,0,0,0.3); border: 1px solid rgba(201,168,76,0.2);
+    color: var(--light); padding: 0.85rem 1rem;
+    font-family: 'Barlow', sans-serif; font-size: 0.9rem;
+    outline: none; transition: border-color 0.3s;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--gold); }
+  .form-group select option { background: var(--steel); }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+
+  /* FOOTER */
+  footer {
+    padding: 3rem 4rem 2rem;
+    background: #111110;
+    border-top: 1px solid rgba(201,168,76,0.12);
+  }
+  .footer-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem;
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--gold); font-size: 1.3rem; letter-spacing: 3px;
+  }
+  .footer-tagline { font-size: 0.8rem; color: var(--mid); margin-top: 0.3rem; }
+  .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .footer-links a { color: var(--mid); text-decoration: none; font-size: 0.82rem; letter-spacing: 1px; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 0.5rem;
+    border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;
+  }
+  .footer-bottom p { font-size: 0.75rem; color: var(--mid); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .flip-section { grid-template-columns: 1fr; }
+    .contact { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .hero-stats { position: static; margin-top: 3rem; }
+    .services, .why-us, .flip-section, .process, .license-section, .area-section, .contact { padding: 4rem 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { padding: 2rem 1.5rem; }
+    .footer-top { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">US Beaver Construction</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#flip">Flip Projects</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Free Quote</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">California Licensed · CSLB #1136673 · Class B · Corp</div>
+  <h1>BUILD.<br><span>ADD.</span><br>TRANSFORM.</h1>
+  <p class="hero-sub">US Beaver Construction Inc — Your trusted General Contractor for new builds, room additions, full remodels, and fix & flip projects across Southern California.</p>
+  <div class="hero-tags">
+    <span class="hero-tag">New Construction</span>
+    <span class="hero-tag">Room Additions & ADU</span>
+    <span class="hero-tag">Full Remodeling</span>
+    <span class="hero-tag">Fix & Flip</span>
+    <span class="hero-tag">Property Management</span>
+  </div>
+  <div class="hero-cta">
+    <a href="#contact" class="btn-primary">Get a Free Quote</a>
+    <a href="#services" class="btn-outline">Our Services</a>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">B</div>
+      <div class="stat-label">Class License</div>
+    </div>
+    <div>
+      <div class="stat-num">LA</div>
+      <div class="stat-label">SoCal Based</div>
+    </div>
+    <div>
+      <div class="stat-num">2027</div>
+      <div class="stat-label">Licensed Thru</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-label">What We Do</div>
+  <h2 class="section-title">Our Core Services</h2>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon">🏗️</div>
+      <h3>New Construction</h3>
+      <p>We build homes and structures from the ground up — delivering quality craftsmanship on schedule and within budget.</p>
+      <ul class="service-list">
+        <li>Custom single-family homes</li>
+        <li>Multi-family residential</li>
+        <li>Site prep & foundation work</li>
+        <li>Full permit & inspection management</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🏠</div>
+      <h3>Room Additions & ADU</h3>
+      <p>Expand your living space or add rental income with a permitted room addition or Accessory Dwelling Unit.</p>
+      <ul class="service-list">
+        <li>Attached & detached ADU</li>
+        <li>Garage conversions</li>
+        <li>Second story additions</li>
+        <li>Junior ADU (JADU)</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🔨</div>
+      <h3>Remodeling & Renovation</h3>
+      <p>Complete interior and exterior remodels that modernize your property and increase its market value.</p>
+      <ul class="service-list">
+        <li>Kitchen & bathroom remodels</li>
+        <li>Open floor plan conversions</li>
+        <li>Flooring, windows & doors</li>
+        <li>Electrical & plumbing upgrades</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">💰</div>
+      <h3>Fix & Flip Projects</h3>
+      <p>We partner with investors to maximize ROI — fast turnarounds, smart renovations, and investor-focused pricing.</p>
+      <ul class="service-list">
+        <li>Distressed property rehab</li>
+        <li>Cosmetic & structural repairs</li>
+        <li>Fast-track scheduling</li>
+        <li>Investor-friendly pricing</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🏢</div>
+      <h3>Commercial Build-Out</h3>
+      <p>Tenant improvements and commercial spaces built to code, on time, and tailored to your business needs.</p>
+      <ul class="service-list">
+        <li>Office & retail build-outs</li>
+        <li>Warehouse improvements</li>
+        <li>ADA compliance upgrades</li>
+        <li>Commercial remodels</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🏡</div>
+      <h3>Property Management</h3>
+      <p>We help landlords and investors manage, maintain, and grow their rental portfolio with ease.</p>
+      <ul class="service-list">
+        <li>Routine maintenance & repairs</li>
+        <li>Tenant coordination</li>
+        <li>Property inspections</li>
+        <li>Renovation between tenants</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHOTO GALLERY STRIP -->
+<section class="gallery-strip">
+  <div class="gallery-item">
+    <img src="images/project3.jpg" alt="New Construction Framing">
+    <div class="gallery-label">New Construction</div>
+  </div>
+  <div class="gallery-item">
+    <img src="images/construction2.jpg" alt="Electrical & Framing">
+    <div class="gallery-label">Electrical Work</div>
+  </div>
+  <div class="gallery-item">
+    <img src="images/framing2.jpg" alt="Bathroom Construction">
+    <div class="gallery-label">Bathroom Build</div>
+  </div>
+  <div class="gallery-item">
+    <img src="images/interior2.jpg" alt="Interior Framing">
+    <div class="gallery-label">Interior Framing</div>
+  </div>
+  <div class="gallery-item">
+    <img src="images/living_room.jpg" alt="Fix & Flip Completed">
+    <div class="gallery-label">Flip Completed</div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us">
+  <div class="section-label">Why Choose Us</div>
+  <h2 class="section-title">Built on Trust &<br>Craftsmanship</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-num">100%</div>
+      <h4>Licensed & Insured</h4>
+      <p>CSLB Class B License — verified and active. Full liability coverage on every job.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">LA</div>
+      <h4>Local Expertise</h4>
+      <p>We know SoCal permitting, codes, and neighborhoods — from LA County to the Inland Empire.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">✓</div>
+      <h4>On Time & On Budget</h4>
+      <p>Transparent pricing, detailed timelines, and no surprise costs. We deliver what we promise.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">$</div>
+      <h4>Investor Friendly</h4>
+      <p>Competitive rates and fast scheduling for flip projects and investment properties.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FLIP SECTION -->
+<section class="flip-section" id="flip">
+  <div class="flip-img-placeholder"></div>
+  <div>
+    <div class="section-label">Fix & Flip Specialists</div>
+    <h2 class="section-title">Maximize Your<br>Investment ROI</h2>
+    <p style="color:var(--mid);line-height:1.8;margin-bottom:1.5rem;">
+      We work with real estate investors throughout SoCal to quickly and cost-effectively transform distressed properties into market-ready homes. Our experience with fix & flip projects means we understand what buyers want and how to deliver it efficiently.
+    </p>
+    <div class="flip-steps">
+      <div class="flip-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h4>Property Assessment</h4>
+          <p>We walk the property with you and provide a detailed scope of work and budget estimate.</p>
+        </div>
+      </div>
+      <div class="flip-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h4>Fast-Track Renovation</h4>
+          <p>Our crews move quickly to complete rehab work on schedule — minimizing your carrying costs.</p>
+        </div>
+      </div>
+      <div class="flip-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h4>Market-Ready Finish</h4>
+          <p>Modern finishes chosen to appeal to today's buyers and maximize your sale price.</p>
+        </div>
+      </div>
+    </div>
+    <a href="#contact" class="btn-primary" style="margin-top:2rem;display:inline-block;">Talk to Us About Your Project</a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="section-label">How It Works</div>
+  <h2 class="section-title">Our Simple Process</h2>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="process-num">01</div>
+      <div class="process-icon">📞</div>
+      <h4>Free Consultation</h4>
+      <p>Tell us about your project. We'll discuss your goals, timeline, and budget.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">02</div>
+      <div class="process-icon">📋</div>
+      <h4>Detailed Estimate</h4>
+      <p>We provide a clear, itemized quote with no hidden fees or surprises.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">03</div>
+      <div class="process-icon">📐</div>
+      <h4>Plan & Permit</h4>
+      <p>We handle drawings, permits, and city approvals so you don't have to.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">04</div>
+      <div class="process-icon">🏗️</div>
+      <h4>Build & Inspect</h4>
+      <p>Our licensed crews build to code. We manage all inspections start to finish.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">05</div>
+      <div class="process-icon">🎉</div>
+      <h4>Final Walkthrough</h4>
+      <p>We walk through every detail with you to make sure you're 100% satisfied.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LICENSE / ABOUT -->
+<section class="license-section" id="about">
+  <div class="license-text">
+    <div class="section-label">About Us</div>
+    <h2 class="section-title">California State<br>Licensed Contractor</h2>
+    <p style="color:var(--mid);line-height:1.8;max-width:460px;">
+      US Beaver Construction Inc is a fully licensed and insured California General Contractor. We hold a Class B General Building license issued by the CSLB, covering a wide range of residential and commercial construction work across the state.
+    </p>
+    <p style="color:var(--mid);line-height:1.8;max-width:460px;margin-top:1rem;">
+      From new construction and ADU additions to remodels and fix & flip renovations — we bring expertise, reliability, and professionalism to every project. We are also bilingual and able to serve both English and Chinese-speaking clients.
+    </p>
+    <p style="color:var(--mid);line-height:1.8;max-width:460px;margin-top:1rem;">
+      Verify our license at <a href="https://www.cslb.ca.gov" target="_blank" style="color:var(--gold);">www.cslb.ca.gov</a>
+    </p>
+    <div class="trust-badges">
+      <div class="trust-badge">✓ CSLB Licensed</div>
+      <div class="trust-badge">✓ Fully Insured</div>
+      <div class="trust-badge">✓ Class B General</div>
+      <div class="trust-badge">✓ Bilingual 中英文</div>
+    </div>
+  </div>
+  <div class="license-badge">
+    <div class="license-num">1136673</div>
+    <div class="license-detail">CSLB License Number</div>
+    <div class="license-detail" style="margin-top:0.5rem;">Class B · General Building</div>
+    <div class="license-detail" style="margin-top:0.5rem;">Entity: Corporation</div>
+    <div class="license-expire">Active · Valid through <span>07/31/2027</span></div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="area-section">
+  <div class="section-label">Where We Work</div>
+  <h2 class="section-title">Service Areas</h2>
+  <p style="color:var(--mid);max-width:560px;line-height:1.8;">Proudly serving Los Angeles County, San Bernardino County, and surrounding communities throughout Southern California.</p>
+  <div class="area-grid">
+    <span class="area-tag featured">Hacienda Heights</span>
+    <span class="area-tag featured">Rowland Heights</span>
+    <span class="area-tag featured">Walnut</span>
+    <span class="area-tag featured">Diamond Bar</span>
+    <span class="area-tag">West Covina</span>
+    <span class="area-tag">Covina</span>
+    <span class="area-tag">City of Industry</span>
+    <span class="area-tag">La Puente</span>
+    <span class="area-tag">El Monte</span>
+    <span class="area-tag">Baldwin Park</span>
+    <span class="area-tag">Pomona</span>
+    <span class="area-tag">Chino Hills</span>
+    <span class="area-tag">Whittier</span>
+    <span class="area-tag">Norwalk</span>
+    <span class="area-tag">Arcadia</span>
+    <span class="area-tag">Temple City</span>
+    <span class="area-tag">San Gabriel</span>
+    <span class="area-tag">Alhambra</span>
+    <span class="area-tag">Ontario</span>
+    <span class="area-tag">Rancho Cucamonga</span>
+    <span class="area-tag">Montebello</span>
+    <span class="area-tag">& More...</span>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div>
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Request a<br>Free Estimate</h2>
+    <p style="color:var(--mid);line-height:1.8;max-width:380px;">
+      Whether you're building new, adding on, remodeling, or flipping — we'd love to hear about your project. No obligation, no pressure.
+    </p>
+    <div class="contact-info-items">
+      <div class="contact-info-item">
+        <div class="icon">📍</div>
+        <div class="text">
+          <strong>Service Area</strong>
+          Los Angeles County · San Bernardino County · SoCal
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="icon">🔏</div>
+        <div class="text">
+          <strong>License</strong>
+          CSLB #1136673 · Class B · Active thru 07/31/2027
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="icon">🌐</div>
+        <div class="text">
+          <strong>Verify License</strong>
+          <a href="https://www.cslb.ca.gov" target="_blank" style="color:var(--gold);">www.cslb.ca.gov</a>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="icon">👤</div>
+        <div class="text">
+          <strong>Contact Person</strong>
+          Daniel
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="icon">📞</div>
+        <div class="text">
+          <strong>Phone</strong>
+          <a href="tel:6265659877" style="color:var(--gold);">(626) 565-9877</a>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="icon">✉️</div>
+        <div class="text">
+          <strong>Email</strong>
+          <a href="mailto:americanbeaver.info@gmail.com" style="color:var(--gold);">americanbeaver.info@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="icon">💬</div>
+        <div class="text">
+          <strong>Languages</strong>
+          English · 中文 (Chinese)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="contact-form" onsubmit="handleSubmit(event)">
+    <div class="form-row">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" placeholder="John" required>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" placeholder="Smith">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="john@email.com" required>
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="tel" placeholder="(626) 000-0000">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Project Type</label>
+      <select>
+        <option value="">Select a service...</option>
+        <option>New Construction</option>
+        <option>Room Addition / ADU</option>
+        <option>Kitchen Remodel</option>
+        <option>Bathroom Remodel</option>
+        <option>Full Home Remodel</option>
+        <option>Fix & Flip Project</option>
+        <option>Commercial Build-Out</option>
+        <option>Property Management</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Project Address / City</label>
+      <input type="text" placeholder="City or address of the project">
+    </div>
+    <div class="form-group">
+      <label>Project Description</label>
+      <textarea placeholder="Tell us about your project — size, scope, timeline, budget range..."></textarea>
+    </div>
+    <button type="submit" class="btn-primary" style="width:100%;margin-top:0.3rem;font-size:0.9rem;">Send Message →</button>
+    <p id="form-msg" style="color:var(--green);font-size:0.85rem;display:none;text-align:center;">✓ Message sent! We'll be in touch within 24 hours.</p>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">US Beaver Construction Inc</div>
+      <div class="footer-tagline">New Construction · Additions · Remodeling · Fix & Flip · Property Management</div>
+    </div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#flip">Fix & Flip</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 US Beaver Construction Inc. All rights reserved.</p>
+    <p>CSLB License #1136673 · Class B · California &nbsp;|&nbsp; Daniel: <a href="tel:6265659877" style="color:var(--mid);">(626) 565-9877</a> &nbsp;|&nbsp; <a href="mailto:americanbeaver.info@gmail.com" style="color:var(--mid);">americanbeaver.info@gmail.com</a></p>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const msg = document.getElementById('form-msg');
+  msg.style.display = 'block';
+  e.target.reset();
+  setTimeout(() => { msg.style.display = 'none'; }, 6000);
+}
+</script>
+</body>
+</html>
